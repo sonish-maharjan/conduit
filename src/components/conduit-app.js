@@ -1,16 +1,25 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html, css } from "lit-element";
 import { initRouter } from "../router";
 
+import "./nav-bar";
+
 class ConduitApp extends LitElement {
+  static getStyles() {
+    return css`
+      #main {
+        padding: 0px 60px;
+      }
+    `;
+  }
+
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
-
-    let x = initRouter(this.shadowRoot.getElementById("main"));
-    console.log(x);
+    initRouter(this.shadowRoot.getElementById("main"));
   }
 
   render() {
-    return html`<main id="main"></main>`;
+    return html` <nav-bar></nav-bar>
+      <main id="main"></main>`;
   }
 }
 
