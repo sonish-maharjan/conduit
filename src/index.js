@@ -1,8 +1,6 @@
 import "./style.css";
-console.log("Hello webpack!");
 
-const fancyFunc = () => {
-  return [1, 2];
-};
-
-const [a, b] = fancyFunc();
+import "./components/conduit-app";
+import "./components/nav-bar";
+import "./pages/home-page";
+import "./pages/new-post-page";
