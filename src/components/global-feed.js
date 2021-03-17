@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit-element";
 import { initRouter } from "../router";
 
-import "./nav-bar";
+import "./feed-list";
 
 class GlobalFeed extends LitElement {
   render() {
