@@ -25,6 +25,7 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(dotenv.parsed),
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
     }),

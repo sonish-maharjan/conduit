@@ -1,8 +1,8 @@
 import { LitElement, html } from "lit-element";
-import { initRouter } from "../router";
 
-import "./nav-bar";
-import "../services/http";
+import { getAllPost } from "../services/postService";
+
+import "./feed-item";
 
 class FeedList extends LitElement {
   static get properties() {
@@ -12,13 +12,29 @@ class FeedList extends LitElement {
   }
 
   constructor() {
+    super();
     this.articles = [];
   }
 
-  connectedCallback() {}
+  connectedCallback() {
+    super.connectedCallback();
+    this.getAllPost().then((articles) => {
+      this.articles = articles;
+    });
+  }
+
+  async getAllPost() {
+    const res = await getAllPost();
+    return res.data.articles;
+  }
 
   render() {
-    return html``;
+    return html`<div>
+      <h3>Articles List</h3>
+      ${this.articles.map(
+        (article) => html`<feed-item .feedItem=${article}></feed-item> `
+      )}
+    </div>`;
   }
 }
 

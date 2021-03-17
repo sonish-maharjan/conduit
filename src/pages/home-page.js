@@ -1,11 +1,10 @@
 import { LitElement, html } from "lit-element";
-import "../components/global-feed";
 
 class HomePage extends LitElement {
   render() {
     return html`
       <div>
-        <global-feed> </global-feed>
+        <h3>Welcome to global feed.</h3>
       </div>
     `;
   }

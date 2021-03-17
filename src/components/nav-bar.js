@@ -32,7 +32,7 @@ class NavBar extends LitElement {
           </li>
 
           <li class="nav-item">
-            <a href="/new-post"> New post </a>
+            <a href="/posts"> Posts </a>
           </li>
         </ul>
       </nav>
