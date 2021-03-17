@@ -31,9 +31,11 @@ class FeedList extends LitElement {
   render() {
     return html`<div>
       <h3>Articles List</h3>
-      ${this.articles.map(
-        (article) => html`<feed-item .feedItem=${article}></feed-item> `
-      )}
+      ${this.articles.length === 0
+        ? html`<p>Loading...</p>`
+        : html`${this.articles.map(
+            (article) => html`<feed-item .feedItem=${article}></feed-item> `
+          )}`}
     </div>`;
   }
 }
