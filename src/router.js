@@ -16,4 +16,9 @@ const routes = () => [
     component: "post-list-page",
     action: () => import("./pages/post-list-page"),
   },
+  {
+    path: "/post-detail/:post_slug",
+    component: "post-detail-page",
+    action: () => import("./pages/post-detail-page"),
+  },
 ];

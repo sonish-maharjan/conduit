@@ -7,3 +7,9 @@ export async function getAllPost() {
   const response = await conduitAppHttp.get(endpoint);
   return response;
 }
+
+export async function getPost(slug) {
+  const endpoint = `${endpoints.ARTICLES}/${slug}`;
+  const response = await conduitAppHttp.get(endpoint);
+  return response;
+}
