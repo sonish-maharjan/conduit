@@ -6,7 +6,7 @@ import "./nav-bar";
 class ConduitApp extends LitElement {
   static getStyles() {
     return css`
-      #main {
+      #container {
         padding: 0px 60px;
       }
     `;
@@ -14,12 +14,14 @@ class ConduitApp extends LitElement {
 
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
-    initRouter(this.shadowRoot.getElementById("main"));
+    initRouter(this.shadowRoot.getElementById("container"));
   }
 
   render() {
-    return html` <nav-bar></nav-bar>
-      <main id="main"></main>`;
+    return html`<main id="main">
+      <nav-bar></nav-bar>
+      <div id="container"></div>
+    </main>`;
   }
 }
 
